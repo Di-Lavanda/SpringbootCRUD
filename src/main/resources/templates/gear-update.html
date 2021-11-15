@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update gear</title>
+</head>
+<body>
+<form action="#" th:action="@{/gear-update}" th:object="${gear}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="model">Model</label>
+    <input type="text" th:field="*{model}" id="model" placeholder="Model">
+    <br/>
+    <label for="type">Type (Automatic, mechanical etc )</label>
+    <input type="text" th:field="*{type}" id="type" placeholder="Type">
+    <br/>
+    <input type="submit" value="Update gear">
+</form>
+</body>
+</html>

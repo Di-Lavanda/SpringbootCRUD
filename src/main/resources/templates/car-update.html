@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update car</title>
+</head>
+<body>
+<form action="#" th:action="@{/car-update}" th:object="${car}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="manufacturer">Manufacturer</label>
+    <input type="text" th:field="*{manufacturer}" id="manufacturer" placeholder="Manufacturer">
+    <br/>
+    <label for="model">Model</label>
+    <input type="text" th:field="*{model}" id="model" placeholder="Model">
+    <br/>
+    <label for="engine">Engine(enter engine id)</label>
+    <input type="text" th:field="*{engine}" id="engine" placeholder="Engine">
+    <br/>
+    <label for="gear">Gear(enter gear id)</label>
+    <input type="text" th:field="*{gear}" id="gear" placeholder="Gear">
+    <br/>
+    <label for="manual">Manual(enter manual id)</label>
+    <input type="text" th:field="*{manual}" id="manual" placeholder="Manual">
+    <br/>
+    <label for="steering-wheel">Steering wheel(enter steering wheel id)</label>
+    <input type="text" th:field="*{steeringWheel}" id="steering-wheel" placeholder="Steering wheel">
+    <br/>
+    <input type="submit" value="Update car">
+</form>
+</body>
+</html>

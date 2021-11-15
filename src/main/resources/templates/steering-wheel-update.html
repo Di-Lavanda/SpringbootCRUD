@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Update steering wheel</title>
+</head>
+<body>
+<form action="#" th:action="@{/steering-wheel-update}" th:object="${steering-wheel}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br/>
+    <label for="type">Type</label>
+    <input type="text" th:field="*{type}" id="type" placeholder="Type">
+    <br/>
+    <input type="submit" value="Update steering wheel">
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Steering wheel</title>
+</head>
+<body>
+<div th:switch="${steeringWheels}">
+    <h2 th:case="null">No steering wheels found!</h2>
+    <div th:case="*">
+        <h2>Steering wheel</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="steeringWheel : ${steeringWheels}">
+                <td th:text="${steeringWheel.id}"></td>
+                <td th:text="${steeringWheel.type}"></td>
+                <td><a th:href="@{steeringWheel-update/{id}(id=${steeringWheel.id})}">Edit</a></td>
+                <td><a th:href="@{steeringWheel-delete/{id}(id=${steeringWheel.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/steering-wheel-create">Create steering wheel</a></p>
+</div>
+</body>
+</html>

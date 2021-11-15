@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create gear</title>
+</head>
+<body>
+<form action="#" th:action="@{/gear-create}" th:object="${gear}" method="post">
+    <label for="model">Model</label>
+    <input type="text" th:field="*{model}" id="model" placeholder="Model">
+    <label for="type">Type</label>
+    <input type="text" th:field="*{type}" id="type" placeholder="Type">
+
+    <input type="submit" value="Create gear">
+</form>
+</body>
+</html>

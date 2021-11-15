@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Engines</title>
+</head>
+<body>
+<div th:switch="${engines}">
+    <h2 th:case="null">No engines found!</h2>
+    <div th:case="*">
+        <h2>Engines</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Model</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="engine : ${engines}">
+                <td th:text="${engine.id}"></td>
+                <td th:text="${engine.model}"></td>
+                <td><a th:href="@{engine-update/{id}(id=${engine.id})}">Edit</a></td>
+                <td><a th:href="@{engine-delete/{id}(id=${engine.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/engine-create">Create engine</a></p>
+</div>
+</body>
+</html>

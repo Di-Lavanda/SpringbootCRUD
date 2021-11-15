@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual</title>
+</head>
+<body>
+<div th:switch="${manuals}">
+    <h2 th:case="null">No manuals found!</h2>
+    <div th:case="*">
+        <h2>Manual</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="manual : ${manuals}">
+                <td th:text="${manual.id}"></td>
+                <td th:text="${manual.name}"></td>
+                <td><a th:href="@{manual-update/{id}(id=${manual.id})}">Edit</a></td>
+                <td><a th:href="@{manual-wheel-delete/{id}(id=${manual.id})}">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/manual-create">Create manual</a></p>
+</div>
+</body>
+</html>
