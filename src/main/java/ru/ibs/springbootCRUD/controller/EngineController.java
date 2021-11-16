@@ -48,7 +48,7 @@ public class EngineController {
         if (id !=null) {
             Engine engine = engineService.findBeId(id);
             model.addAttribute("engine", engine);
-            return "redirect:/engines";
+            return "/engine-update";
         }
         else {
             throw new RuntimeException("Error: incorrect id");

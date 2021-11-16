@@ -15,7 +15,7 @@ public class EngineService {
     @Autowired
     public EngineService(EngineRepository engineRepository){this.engineRepository = engineRepository;}
 
-    public Engine findBeId(Long id){return engineRepository.getOne(id);}
+    public Engine findBeId(Long id){return engineRepository.findById(id).orElse(null);}
     public List<Engine> findAll(){return engineRepository.findAll();}
     public Engine saveEngine(Engine engine){return engineRepository.save(engine);}
     public void deleteById(Long id){engineRepository.deleteById(id);}

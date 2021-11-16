@@ -3,6 +3,7 @@ package ru.ibs.springbootCRUD.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -17,8 +18,8 @@ public class Car {
     private String model;
     @OneToOne(cascade = CascadeType.ALL)
     private Engine engine;
-    @OneToOne(cascade = CascadeType.ALL)
-    private Gear gear;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Gear> gear;
     @OneToOne(cascade = CascadeType.ALL)
     private Manual manual;
     @OneToOne(cascade = CascadeType.ALL)

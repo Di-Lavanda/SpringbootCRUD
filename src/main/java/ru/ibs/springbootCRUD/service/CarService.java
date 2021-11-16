@@ -17,7 +17,7 @@ public class CarService {
     }
 
     public Car findById(Long id){
-        return carRepository.getOne(id);
+        return carRepository.findById(id).orElse(null);
     }
     public List<Car> findAll(){
         return carRepository.findAll();

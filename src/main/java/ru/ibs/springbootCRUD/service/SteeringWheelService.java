@@ -14,7 +14,7 @@ public class SteeringWheelService {
 
     @Autowired
     public SteeringWheelService(SteeringWheelRepository steeringWheelRepository){this.steeringWheelRepository = steeringWheelRepository;}
-    public SteeringWheel findBuId(Long id){return steeringWheelRepository.getOne(id);}
+    public SteeringWheel findBuId(Long id){return steeringWheelRepository.findById(id).orElse(null);}
     public List<SteeringWheel> findAll(){return steeringWheelRepository.findAll();}
     public SteeringWheel saveSteeringWheel(SteeringWheel steeringWheel){return steeringWheelRepository.save(steeringWheel);}
     public void deleteById(Long id){steeringWheelRepository.deleteById(id);}

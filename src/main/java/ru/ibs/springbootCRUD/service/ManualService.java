@@ -13,9 +13,9 @@ public class ManualService {
     @Autowired
     public ManualService(ManualRepository manualRepository){this.manualRepository = manualRepository;}
 
-    public Manual findBuId(Long id){return manualRepository.getOne(id);}
+    public Manual findById(Long id){return manualRepository.findById(id).orElse(null);}
     public List<Manual> findAll(){return manualRepository.findAll();}
-    public Manual saveManual(Manual manual){return manualRepository.save(manual);}
+    public void saveManual(Manual manual){manualRepository.save(manual);}
     public void deleteById(Long id){manualRepository.deleteById(id);}
 
 }
